@@ -29,7 +29,7 @@ $maxProfit = 0;
 
 
 if($breads>1){
-$maxNonVegBṇurgerCount = min($breads / 2, $nonVegPattice);
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
 $maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
 $breads -= $maxNonVegBurgerCount * 2;
 $nonVegPattice -= $maxNonVegBurgerCount;
