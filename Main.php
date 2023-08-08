@@ -27,8 +27,8 @@ $priceTikkiBurger = 112;
 
 $maxProfit = 0;
 
-
-if($breads>1){
+if($priceNonVegBurger>=$priceVegBurger && $priceNonVegBurger>=$priceTikkiBurger && $priceTikkiBurger>=$priceVegBurger){
+    if($breads>1){
 $maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
 $maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
 $breads -= $maxNonVegBurgerCount * 2;
@@ -53,6 +53,142 @@ $vegPattice -= $maxVegBurgerCount;
 
 
 print("The total maximum possible profit: " . $maxProfit);
+
+}else if($priceNonVegBurger>=$priceVegBurger && $priceNonVegBurger>=$priceTikkiBurger && $priceTikkiBurger<$priceVegBurger){
+    if($breads>1){
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
+$maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
+$breads -= $maxNonVegBurgerCount * 2;
+$nonVegPattice -= $maxNonVegBurgerCount;
+}
+
+if($breads>1){
+   $maxVegBurgerCount = min($breads / 2, $vegPattice);
+$maxProfit += $maxVegBurgerCount * $priceVegBurger;
+$breads -= $maxVegBurgerCount * 2;
+$vegPattice -= $maxVegBurgerCount; 
+}
+
+
+if($breads>1){
+$maxTikkiBurgerCount = min($breads / 2, $TikkiPattice);
+$maxProfit += $maxTikkiBurgerCount * $priceTikkiBurger;
+$breads -= $maxTikkiBurgerCount * 2;
+$TikkiPattice -= $maxTikkiBurgerCount;
+}
+
+
+print("The total maximum possible profit: " . $maxProfit);
+
+}else if($priceVegBurger>=$priceNonVegBurger && $priceVegBurger>=$priceTikkiBurger && $priceNonVegBurger>=$priceTikkiBurger){
+   if($breads>1){
+   $maxVegBurgerCount = min($breads / 2, $vegPattice);
+$maxProfit += $maxVegBurgerCount * $priceVegBurger;
+$breads -= $maxVegBurgerCount * 2;
+$vegPattice -= $maxVegBurgerCount; 
+}
+   
+    if($breads>1){
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
+$maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
+$breads -= $maxNonVegBurgerCount * 2;
+$nonVegPattice -= $maxNonVegBurgerCount;
+}
+
+
+if($breads>1){
+$maxTikkiBurgerCount = min($breads / 2, $TikkiPattice);
+$maxProfit += $maxTikkiBurgerCount * $priceTikkiBurger;
+$breads -= $maxTikkiBurgerCount * 2;
+$TikkiPattice -= $maxTikkiBurgerCount;
+}
+
+
+print("The total maximum possible profit: " . $maxProfit);
+
+
+}else if($priceVegBurger>=$priceNonVegBurger && $priceVegBurger>=$priceTikkiBurger && $priceNonVegBurger<$priceTikkiBurger){
+   
+if($breads>1){
+   $maxVegBurgerCount = min($breads / 2, $vegPattice);
+$maxProfit += $maxVegBurgerCount * $priceVegBurger;
+$breads -= $maxVegBurgerCount * 2;
+$vegPattice -= $maxVegBurgerCount; 
+}
+
+if($breads>1){
+$maxTikkiBurgerCount = min($breads / 2, $TikkiPattice);
+$maxProfit += $maxTikkiBurgerCount * $priceTikkiBurger;
+$breads -= $maxTikkiBurgerCount * 2;
+$TikkiPattice -= $maxTikkiBurgerCount;
+}
+   
+if($breads>1){
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
+$maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
+$breads -= $maxNonVegBurgerCount * 2;
+$nonVegPattice -= $maxNonVegBurgerCount;
+}
+
+
+
+print("The total maximum possible profit: " . $maxProfit);
+
+}
+else if($priceTikkiBurger>=$priceVegBurger && $priceTikkiBurger>=$priceNonVegBurger && $priceVegBurger>=$priceNonVegBurger ){
+   if($breads>1){
+$maxTikkiBurgerCount = min($breads / 2, $TikkiPattice);
+$maxProfit += $maxTikkiBurgerCount * $priceTikkiBurger;
+$breads -= $maxTikkiBurgerCount * 2;
+$TikkiPattice -= $maxTikkiBurgerCount;
+}
+
+
+if($breads>1){
+   $maxVegBurgerCount = min($breads / 2, $vegPattice);
+$maxProfit += $maxVegBurgerCount * $priceVegBurger;
+$breads -= $maxVegBurgerCount * 2;
+$vegPattice -= $maxVegBurgerCount; 
+}
+   
+if($breads>1){
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
+$maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
+$breads -= $maxNonVegBurgerCount * 2;
+$nonVegPattice -= $maxNonVegBurgerCount;
+}
+
+
+print("The total maximum possible profit: " . $maxProfit);
+
+
+}else if($priceTikkiBurger>=$priceVegBurger && $priceTikkiBurger>=$priceNonVegBurger && $priceVegBurger<$priceNonVegBurger ){
+  if($breads>1){
+$maxTikkiBurgerCount = min($breads / 2, $TikkiPattice);
+$maxProfit += $maxTikkiBurgerCount * $priceTikkiBurger;
+$breads -= $maxTikkiBurgerCount * 2;
+$TikkiPattice -= $maxTikkiBurgerCount;
+}
+  
+if($breads>1){
+$maxNonVegBurgerCount = min($breads / 2, $nonVegPattice);
+$maxProfit += $maxNonVegBurgerCount * $priceNonVegBurger;
+$breads -= $maxNonVegBurgerCount * 2;
+$nonVegPattice -= $maxNonVegBurgerCount;
+}
+
+if($breads>1){
+   $maxVegBurgerCount = min($breads / 2, $vegPattice);
+$maxProfit += $maxVegBurgerCount * $priceVegBurger;
+$breads -= $maxVegBurgerCount * 2;
+$vegPattice -= $maxVegBurgerCount; 
+}
+
+
+print("The total maximum possible profit: " . $maxProfit);
+}
+
+
 
 ?>
 
